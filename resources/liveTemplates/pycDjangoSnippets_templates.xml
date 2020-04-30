@@ -1,0 +1,23 @@
+<templateSet group="pycDjangoSnippets: django templates">
+
+    <template name="dj-load-static" toReformat="true" toShortenFQNames="true" value="{% load static %}$END$">
+        <context>
+            <option name="Django" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-include" toReformat="true" toShortenFQNames="true" value="{% include '$VAR1$' %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="" name="VAR1"/>
+        <context>
+            <option name="Django" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-static" toReformat="true" toShortenFQNames="true" value="{% static '$VAR1$' %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="" name="VAR1"/>
+        <context>
+            <option name="Django" value="true"/>
+        </context>
+    </template>
+
+</templateSet>

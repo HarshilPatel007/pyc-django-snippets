@@ -1,0 +1,45 @@
+<idea-plugin>
+  <id>harshil.patel.pyc.django.snippets</id>
+  <name>pyc-django-snippets</name>
+  <version>1.0</version>
+  <vendor email="harshil000004@gmail.com" url="https://github.com/HarshilPatel007">Harshil Patel</vendor>
+
+  <description><![CDATA[
+      <b>pyc-django-snippets</b>
+      <p>Code Snippets for Django Web Framework.</p><br/>
+      <p>This plugin is developed to fulfill the intention of helping the django web developer to help them to fasten their workflow to some extent.<br/><br/>
+      <b>Developer Information:</b>
+      <ul>
+        <li> Name : Harshil Patel </li>
+        <li> Github : <a href="https://github.com/HarshilPatel007" target="_blank"> Link </a> </li>
+      </ul> <br/>
+      <b>Usage :</b>
+      <p> every snippets starts with <i> dj-* </i> </p>
+      <p>So, just type <i> dj-[snippet-name] </i> and hit TAB key.</p> <br/>
+      <b>Snippets List</b>
+      <p> Click <a href="https://github.com/HarshilPatel007/pyc-django-snippets/" target="_blank">here</a> to see the all available snippets lists.</p>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <b>v1.0 :</b> first release.<br>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <defaultLiveTemplatesProvider implementation="pycDjangoSnippets"> </defaultLiveTemplatesProvider>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>

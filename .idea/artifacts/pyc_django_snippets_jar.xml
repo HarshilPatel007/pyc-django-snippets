@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="pyc-django-snippets:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/pyc_django_snippets_jar</output-path>
+    <root id="archive" name="pyc-django-snippets.jar">
+      <element id="module-output" name="pyc-django-snippets" />
+    </root>
+  </artifact>
+</component>

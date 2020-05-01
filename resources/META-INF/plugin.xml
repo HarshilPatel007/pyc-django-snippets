@@ -14,9 +14,10 @@
         <li> Github : <a href="https://github.com/HarshilPatel007" target="_blank"> Link </a> </li>
       </ul> <br/>
       <b>Usage :</b>
-      <p> every snippets starts with <i> dj-* </i> </p>
-      <p>So, just type <i> dj-[snippet-name] </i> and hit TAB key.</p> <br/>
-      <b>Snippets List</b>
+      <p> every snippets starts with <b><i> dj-* </i></b> </p>
+      <p>So, just type <b><i> dj-[snippet-name] </i></b> and hit TAB key.</p>
+      <p> Type <b><i> dj- </i></b> and Press <b><i> Ctrl + Space </i></b> to see the full list of snippets.</p><br/>
+      <b>Snippets List:</b>
       <p> Click <a href="https://github.com/HarshilPatel007/pyc-django-snippets/" target="_blank">here</a> to see the all available snippets lists.</p>
     ]]></description>
 
@@ -40,6 +41,9 @@
 
   <actions>
     <!-- Add your actions here -->
+    <action id="pycCopyDjangoModelFields" class="pycCopyDjangoModelFields" text="Copy Django Model Fields" description="Copy Django ModelFields and Paste it into Forms in tupple formate.">
+      <keyboard-shortcut first-keystroke="control alt Z" keymap="$default"/>
+    </action>
   </actions>
 
 </idea-plugin>

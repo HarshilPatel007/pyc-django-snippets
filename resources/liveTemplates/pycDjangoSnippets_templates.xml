@@ -1,22 +1,198 @@
 <templateSet group="pycDjangoSnippets: django templates">
 
-    <template name="dj-load-static" toReformat="true" toShortenFQNames="true" value="{% load static %}$END$">
+    <template name="dj-ocblock" description="{% val %}" toReformat="true" toShortenFQNames="true" value="{% $VAR$ %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="" name="VAR"/>
         <context>
             <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
         </context>
     </template>
 
-    <template name="dj-include" toReformat="true" toShortenFQNames="true" value="{% include '$VAR1$' %}$END$">
-        <variable alwaysStopAt="true" defaultValue="" expression="" name="VAR1"/>
+    <template name="dj-ocvar" description="{{ val }}" toReformat="true" toShortenFQNames="true" value="{{ $VAR$ }}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="" name="VAR"/>
         <context>
             <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
         </context>
     </template>
 
-    <template name="dj-static" toReformat="true" toShortenFQNames="true" value="{% static '$VAR1$' %}$END$">
-        <variable alwaysStopAt="true" defaultValue="" expression="" name="VAR1"/>
+    <template name="dj-load-static" description="{% load static %}" toReformat="true" toShortenFQNames="true" value="{% load static %}$END$">
         <context>
             <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-include" description="{% include '/file/path/' %}" toReformat="true" toShortenFQNames="true" value="{% include '$FILEPATH$' %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="complete()" name="FILEPATH"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-static" description="{% static '/file/path/' %}" toReformat="true" toShortenFQNames="true" value="{% static '$FILEPATH$' %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="complete()" name="FILEPATH"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-autoescape" description="{% autoescape on %} {% endautoescape %}" toReformat="true" toShortenFQNames="true" value="{% autoescape on %}&#xA;{% endautoescape %}$END$">
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-comment" description="{% comment 'val' %}" toReformat="true" toShortenFQNames="true" value="{% comment '$COMMENT$'%}&#xA;{% endcomment %}$END$">
+        <variable alwaysStopAt="true" defaultValue="your comments" expression="" name="COMMENT"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-extends" description="{% extends '/file/path/' %}" toReformat="true" toShortenFQNames="true" value="{% extends '$FILEPATH$' %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="complete()" name="FILEPATH"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-filter" description="{% filter val %} {% endfilter %}" toReformat="true" toShortenFQNames="true" value="{% filter $FILTER$ %} {% endfilter %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoFilter()" name="FILTER"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-firstof" description="{% firstof val %}" toReformat="true" toShortenFQNames="true" value="{% firstof $FIRSTOF$ %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="" name="FIRSTOF"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-for" description="{% for val %} {% endfor %}" toReformat="true" toShortenFQNames="true" value="{% for foo in $VAR1$ %}&#xA;{% endfor %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR1"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-for-empty" description="{% for val %} {% empty %} {% endfor %}" toReformat="true" toShortenFQNames="true" value="{% for foo in $VAR1$ %}&#xA;{% empty %}&#xA;{% endfor %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR1"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-if" description="{% if val %} {% endif %}" toReformat="true" toShortenFQNames="true" value="{% if $VAR1$ %}&#xA;{% endif %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR1"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-if-else" description="{% if val %} {% else %} {% endif %}" toReformat="true" toShortenFQNames="true" value="{% if $VAR1$ %}&#xA;{% else %}&#xA;{% endif %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR1"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-if-elif-else" description="{% if val %} {% elif %} {% else %} {% endif %}" toReformat="true" toShortenFQNames="true" value="{% if $VAR1$ %}&#xA;{% elif %}&#xA;{% else %}&#xA;{% endif %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR1"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-if-not" description="{% if not val %} {% endif %}" toReformat="true" toShortenFQNames="true" value="{% if not $VAR1$ %}&#xA;{% endif %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR1"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-if-and" description="{% if val1 and val2 %} {% endif %}" toReformat="true" toShortenFQNames="true" value="{% if $VAR1$ and $VAR2$ %}&#xA;{% endif %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR1"/>
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR2"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-if-or" description="{% if val1 or val2 %} {% endif %}" toReformat="true" toShortenFQNames="true" value="{% if $VAR1$ or $VAR2$ %}&#xA;{% endif %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR1"/>
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR2"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-if-in" description="{% if val1 in val2 %} {% endif %}" toReformat="true" toShortenFQNames="true" value="{% if $VAR1$ in $VAR2$ %}&#xA;{% endif %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="" name="VAR1"/>
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR2"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-if-not-in" description="{% if val1 not in val2 %} {% endif %}" toReformat="true" toShortenFQNames="true" value="{% if $VAR1$ not in $VAR2$ %}&#xA;{% endif %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="" name="VAR1"/>
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR2"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-if-is" description="{% if val1 is val2 %} {% endif %}" toReformat="true" toShortenFQNames="true" value="{% if $VAR1$ is $VAR2$ %}&#xA;{% endif %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR1"/>
+        <variable alwaysStopAt="true" defaultValue="" expression="" name="VAR2"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-if-is-not" description="{% if val1 is not val2 %} {% endif %}" toReformat="true" toShortenFQNames="true" value="{% if $VAR1$ is not $VAR2$ %}&#xA;{% endif %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="" name="VAR1"/>
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR2"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-ifchanged" description="{% ifchanged val %} {% endif %}" toReformat="true" toShortenFQNames="true" value="{% ifchanged $VAR1$ %}&#xA;{% ifchanged %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="djangoVariable()" name="VAR1"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
+        </context>
+    </template>
+
+    <template name="dj-url" description="{% url 'val' %}" toReformat="true" toShortenFQNames="true" value="{% url '$URL$' %}$END$">
+        <variable alwaysStopAt="true" defaultValue="" expression="" name="URL"/>
+        <context>
+            <option name="Django" value="true"/>
+            <option name="HTML" value="true"/>
         </context>
     </template>
 
